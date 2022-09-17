@@ -1,0 +1,131 @@
+﻿<Window x:Class="TortugasKarpenko.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TortugasKarpenko"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="834" Width="1194">
+    <Grid Background="#D5921A">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.7*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border Background="#443020" Grid.ColumnSpan="4">
+            <TextBlock Text="Tortuga's"
+                   FontFamily="Garamond"
+                   FontSize="60"
+                   Foreground="#F1D881"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+        </Border>
+        <Button Grid.Column="0"
+                Grid.Row="1"
+                Width="150"
+                Height="150"
+                Background="#F1D881"
+                x:Name="btnTableOne"
+                />
+        <Button Grid.Column="0"
+                Grid.Row="1"
+                Width="150"
+                Height="150"
+                Background="#F1D881"
+                 x:Name="btnTableTwo"
+                />
+        <Button Grid.Column="1"
+                Grid.Row="1"
+                Width="150"
+                Height="150"
+                Background="#F1D881"
+                 x:Name="btnTableThree"
+                />
+        <Button Grid.Column="2"
+                Grid.Row="1"
+                Width="150"
+                Height="150"
+                Background="#F1D881"
+                 x:Name="btnTableFo"
+                />
+        <Button Grid.Column="3"
+                Grid.Row="1"
+                Width="150"
+                Height="150"
+                Background="#F1D881"
+                 x:Name="btnTableFive"
+                />
+        <Button Grid.Column="0"
+                Grid.Row="1"
+                Width="150"
+                Height="150"
+                Background="#F1D881"
+                 x:Name="btnTableSix"
+                />
+        <Button Grid.Column="0"
+                Grid.Row="2"
+                Width="150"
+                Height="150"
+                Background="#F1D881"
+                 x:Name="btnTableSeven"
+                />
+        <Button Grid.Column="1"
+                Grid.Row="2"
+                Width="150"
+                Height="150"
+                Background="#F1D881"
+                 x:Name="btnTableEight"
+                />
+        <Button Grid.Column="2"
+                Grid.Row="2"
+                Width="150"
+                Height="150"
+                Background="#F1D881"
+                 x:Name="btnTableNine"
+                />
+        <Button Grid.Column="3"
+                Grid.Row="2"
+                Width="150"
+                Height="150"
+                Background="#F1D881"
+                 x:Name="btnTableTen"
+                />
+        <Button Grid.Column="0"
+                Grid.Row="3"
+                Width="150"
+                Height="150"
+                Background="#F1D881"
+                 x:Name="btnTableEleven"
+                />
+        <Button Grid.Column="1"
+                Grid.Row="3"
+                Width="150"
+                Height="150"
+                Background="#F1D881"
+                 x:Name="btnTableTwelve"
+                />
+        <Button Grid.Column="2"
+                Grid.Row="3"
+                Width="150"
+                Height="150"
+                Background="#F1D881"
+                 x:Name="btnTableThirteen"
+                />
+        <Button Grid.Column="3"
+                Grid.Row="3"
+                Width="150"
+                Height="150"
+                Background="#F1D881"
+                 x:Name="btnTableFourTeen"
+                />
+
+    </Grid>
+</Window>
