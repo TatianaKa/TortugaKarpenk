@@ -17,5 +17,7 @@
     <div>Сотрудники включают в себя фамилию,имя,телефон,зарплату и должность<div/>
     <div>Должность включает в себя номер и наименование<div/>
     <div>И последнее это бронирование- есть дата и столик<div/>
+    <div> Архитектура:</div>
+       <p><img  alt="AuthWindow" src="https://github.com/TatianaKa/TortugaKarpenko/blob/master/Architecture.PNG"  </img></p>
   </body>
 </html>
