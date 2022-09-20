@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TortugasKarpenko.Windows;
 
 namespace TortugasKarpenko
 {
@@ -23,6 +24,18 @@ namespace TortugasKarpenko
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnTableOne_Click(object sender, RoutedEventArgs e)
+        {
+            MenuWindow menuWindow = new MenuWindow();
+            menuWindow.Show();
+            Close();
+        }
+
+        private void txbExit_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
         }
     }
 }

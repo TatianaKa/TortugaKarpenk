@@ -23,5 +23,16 @@ namespace TortugasKarpenko.Windows
         {
             InitializeComponent();
         }
+
+        private void txbBack_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            main.ShowDialog();
+        }
+
+        private void txbClose_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Close();
+        }
     }
 }
