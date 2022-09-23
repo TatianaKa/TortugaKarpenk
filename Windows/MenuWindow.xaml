@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen"
         Title="MenuWindow" Height=" 834" Width="1194"
         >
-    <Grid Background="#443020">
+    <Grid Background="#443020" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.3*"/>
             <ColumnDefinition Width="*"/>
@@ -84,6 +84,7 @@
                 BorderThickness="1">
             <StackPanel
               Width="330"
+                MouseDown="StackPanel_MouseDown"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
               Height="308"
@@ -112,5 +113,10 @@
                            FontFamily="Garamond"/>
             </StackPanel>
         </Border>
+        <Frame Grid.Column="1"
+               Grid.Row="1"
+               Width="647"
+               Height="379"
+               x:Name="frame"/>
     </Grid>
 </Window>

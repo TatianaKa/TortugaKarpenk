@@ -11,36 +11,22 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using TortugasKarpenko.Pages;
 
 namespace TortugasKarpenko.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для MenuWindow.xaml
+    /// Логика взаимодействия для ProductWindow.xaml
     /// </summary>
-    public partial class MenuWindow : Window
+    public partial class ProductWindow : Window
     {
-        public MenuWindow()
+        public ProductWindow()
         {
             InitializeComponent();
-        }
-
-        private void txbBack_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            MainWindow main = new MainWindow();
-            main.ShowDialog();
         }
 
         private void txbClose_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Close();
-        }
-
-        private void StackPanel_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            ProductWindow product = new ProductWindow();
-            product.Show();
-            this.Opacity = 50;
         }
     }
 }
