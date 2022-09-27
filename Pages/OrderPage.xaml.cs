@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TortugasKarpenko.Windows;
 
 namespace TortugasKarpenko.Pages
 {
@@ -23,6 +24,17 @@ namespace TortugasKarpenko.Pages
         public OrderPage()
         {
             InitializeComponent();
+        }
+
+        private void btnPay_Click(object sender, RoutedEventArgs e)
+        {
+            PayWindow pay = new PayWindow();
+            pay.ShowDialog();
+        }
+
+        private void Grid_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Content = null;
         }
     }
 }

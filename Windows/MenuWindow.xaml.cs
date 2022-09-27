@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using TortugasKarpenko.Pages;
 
 namespace TortugasKarpenko.Windows
@@ -23,12 +14,16 @@ namespace TortugasKarpenko.Windows
         public MenuWindow()
         {
             InitializeComponent();
+            LVCatalog.ItemsSource = ClassHelper.AppData.context.Category.ToList();
+
+
         }
 
         private void txbBack_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MainWindow main = new MainWindow();
-            main.ShowDialog();
+            main.Show();
+            Close();
         }
 
         private void txbClose_MouseDown(object sender, MouseButtonEventArgs e)
@@ -36,11 +31,28 @@ namespace TortugasKarpenko.Windows
             Close();
         }
 
-        private void StackPanel_MouseDown(object sender, MouseButtonEventArgs e)
+        private void txbOrder_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            ProductWindow product = new ProductWindow();
-            product.Show();
-            this.Opacity = 50;
+            frame.Navigate(new OrderPage());
+
+        }
+
+        private void LVCatalog_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var Category = LVCatalog.SelectedItem as EF.Category;
+            LVItems.ItemsSource = ClassHelper.AppData.context.Dish.Where(i => i.CategoryId == Category.Id).ToList();
+        }
+
+        private void LVItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var Dish = LVItems.SelectedItem as EF.Dish;
+            if (Dish != null)
+            {
+                ProductWindow product = new ProductWindow(Dish.Id);
+                this.Opacity = 50;
+                product.Show();
+            }
+
         }
     }
 }

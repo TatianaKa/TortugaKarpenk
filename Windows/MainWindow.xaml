@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="834" Width="1194">
+        Title="MainWindow" 
+        Height="834" Width="1194"
+        MaxHeight="834" MaxWidth="1194">
     <Grid Background="#D5921A">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.7*" />
@@ -48,6 +50,7 @@
                 Click="btnTableOne_Click"
                 />
         <Button Grid.Column="1"
+                Click="btnTableTwo_Click"
                 Grid.Row="1"
                 Width="150"
                 Height="150"
@@ -60,6 +63,7 @@
                 Height="150"
                 Background="#F1D881"
                  x:Name="btnTableThree"
+                Click="btnTableThree_Click"
                 />
         <Button Grid.Column="3"
                 Grid.Row="1"
@@ -67,6 +71,7 @@
                 Height="150"
                 Background="#F1D881"
                  x:Name="btnTableFo"
+                Click="btnTableFo_Click"
                 />
         <Button Grid.Column="0"
                 Grid.Row="2"
@@ -74,6 +79,7 @@
                 Height="150"
                 Background="#F1D881"
                  x:Name="btnTableFive"
+                Click="btnTableFive_Click"
                 />
         <Button Grid.Column="1"
                 Grid.Row="2"
@@ -81,6 +87,7 @@
                 Height="150"
                 Background="#F1D881"
                  x:Name="btnTableSix"
+                Click="btnTableSix_Click"
                 />
         <Button Grid.Column="2"
                 Grid.Row="2"
@@ -88,6 +95,7 @@
                 Height="150"
                 Background="#F1D881"
                  x:Name="btnTableSeven"
+                Click="btnTableSeven_Click"
                 />
         <Button Grid.Column="3"
                 Grid.Row="2"
@@ -95,6 +103,7 @@
                 Height="150"
                 Background="#F1D881"
                  x:Name="btnTableEight"
+                Click="btnTableEight_Click"
                 />
         <Button Grid.Column="0"
                 Grid.Row="3"
@@ -102,6 +111,7 @@
                 Height="150"
                 Background="#F1D881"
                  x:Name="btnTableNine"
+                Click="btnTableNine_Click"
                 />
         <Button Grid.Column="1"
                 Grid.Row="3"
@@ -109,6 +119,7 @@
                 Height="150"
                 Background="#F1D881"
                  x:Name="btnTableTen"
+                Click="btnTableTen_Click"
                 />
         <Button Grid.Column="2"
                 Grid.Row="3"
@@ -116,6 +127,7 @@
                 Height="150"
                 Background="#F1D881"
                  x:Name="btnTableEleven"
+                Click="btnTableEleven_Click"
                 />
         <Button Grid.Column="3"
                 Grid.Row="3"
@@ -123,7 +135,10 @@
                 Height="150"
                 Background="#F1D881"
                  x:Name="btnTableTwelf"
+                Click="btnTableTwelf_Click"
                 />
+        <Frame x:Name="frame" Grid.ColumnSpan="4"
+               Grid.RowSpan="4"/>
 
     </Grid>
 </Window>

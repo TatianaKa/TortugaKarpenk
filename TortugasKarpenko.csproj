@@ -65,7 +65,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ClassHelper\AppData.cs" />
-    <Compile Include="EF\Booking.cs">
+    <Compile Include="EF\Book.cs">
       <DependentUpon>Model401.tt</DependentUpon>
     </Compile>
     <Compile Include="EF\Category.cs">
@@ -95,13 +95,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model401.edmx</DependentUpon>
     </Compile>
+    <Compile Include="EF\ModelHome.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelHome.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ModelHome.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelHome.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ModelHome.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelHome.edmx</DependentUpon>
+    </Compile>
     <Compile Include="EF\Order.cs">
       <DependentUpon>Model401.tt</DependentUpon>
     </Compile>
     <Compile Include="EF\OrderDish.cs">
       <DependentUpon>Model401.tt</DependentUpon>
     </Compile>
-    <Compile Include="EF\Post.cs">
+    <Compile Include="EF\Role.cs">
       <DependentUpon>Model401.tt</DependentUpon>
     </Compile>
     <Compile Include="EF\sysdiagrams.cs">
@@ -113,11 +128,14 @@
     <Compile Include="Pages\OrderPage.xaml.cs">
       <DependentUpon>OrderPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ProductPage.xaml.cs">
-      <DependentUpon>ProductPage.xaml</DependentUpon>
+    <Compile Include="Pages\Page1.xaml.cs">
+      <DependentUpon>Page1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PayWindow.xaml.cs">
+      <DependentUpon>PayWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ProductWindow.xaml.cs">
       <DependentUpon>ProductWindow.xaml</DependentUpon>
@@ -126,7 +144,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ProductPage.xaml">
+    <Page Include="Pages\Page1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -143,6 +161,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Windows\MenuWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PayWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -176,6 +198,13 @@
     <None Include="EF\Model401.edmx.diagram">
       <DependentUpon>Model401.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="EF\ModelHome.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelHome.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EF\ModelHome.edmx.diagram">
+      <DependentUpon>ModelHome.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -189,19 +218,29 @@
     <Folder Include="Res\" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="EF\Model401.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model401.Context.cs</LastGenOutput>
       <DependentUpon>Model401.edmx</DependentUpon>
+      <LastGenOutput>Model401.Context.cs</LastGenOutput>
     </Content>
     <Content Include="EF\Model401.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model401.edmx</DependentUpon>
       <LastGenOutput>Model401.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="EF\ModelHome.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelHome.edmx</DependentUpon>
+      <LastGenOutput>ModelHome.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EF\ModelHome.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelHome.edmx</DependentUpon>
+      <LastGenOutput>ModelHome.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

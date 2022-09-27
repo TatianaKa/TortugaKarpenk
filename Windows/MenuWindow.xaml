@@ -8,7 +8,7 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         Title="MenuWindow" Height=" 834" Width="1194"
-        >
+        MaxHeight="834" MaxWidth="1194">
     <Grid Background="#443020" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.3*"/>
@@ -19,25 +19,42 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         
-        <StackPanel Grid.RowSpan="2" 
+        <StackPanel 
                     Background="#D5921A">
             <TextBlock Text="Каталог"
                        FontFamily="Garamond"
                        HorizontalAlignment="Center"
                        FontSize="40"
                        Margin="0 10 0 0"/>
-            <TextBlock Text="Холодные блюда"
-                       FontFamily="Garamond"
-                       HorizontalAlignment="Center"
-                       FontSize="35"
-                       Margin="0 90 0 0"/> 
-            <TextBlock Text="Горячие блюда"
-                       FontFamily="Garamond"
-                       HorizontalAlignment="Center"
-                       FontSize="35"
-                       Margin="0 40 0 0"/>
         </StackPanel>
-        
+        <ListView x:Name="LVCatalog" 
+                  Grid.Row="1" 
+                  Background="#D5921A"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  SelectionChanged="LVCatalog_SelectionChanged"
+              
+                >
+         
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate >
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                   <TextBlock Text="{Binding Path=NameCategory}"
+                   x:Name="txbOrder"
+                   Grid.Column="1"
+                   Foreground="#F1D881"
+                   FontFamily="Garamond"
+                   HorizontalAlignment="Right"     
+                   FontSize="30"
+                   Margin="5 10 40 0"/>
+                   
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+       
         <TextBlock Text="Содержание"
                    Grid.Column="1"
                    Foreground="#F1D881"
@@ -53,6 +70,7 @@
                    FontFamily="Garamond"
                    HorizontalAlignment="Right"     
                    FontSize="40"
+                      MouseDown="txbOrder_MouseDown"
                    Margin="0 10 130 0"/>
         <TextBlock Text="→"
                    x:Name="txbBack"
@@ -72,8 +90,22 @@
                    FontSize="40"
                    MouseDown="txbClose_MouseDown"
                    Margin="0 10 20 0"/>
-        
-        <Border Grid.Column="1" 
+        <ListView x:Name="LVItems" 
+                  Grid.Row="1" 
+                  Grid.Column="1"
+                  Background="#443020"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  SelectionChanged="LVItems_SelectionChanged"
+                >
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate >
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                      <Border Grid.Column="1" 
               Grid.Row="1"
                 Height="308"
                 HorizontalAlignment="Left"
@@ -84,7 +116,6 @@
                 BorderThickness="1">
             <StackPanel
               Width="330"
-                MouseDown="StackPanel_MouseDown"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
               Height="308"
@@ -93,8 +124,9 @@
                        Height="173"
                        VerticalAlignment="Top"
                        Margin="10"
+                       Source="{Binding Path=ImagePath}"
                       />
-                <TextBlock Text="Название"
+                <TextBlock Text="{Binding Path=Title}"
                            FontSize="30"
                            HorizontalAlignment="Center"
                            Margin="0 5 0 0"
@@ -105,7 +137,7 @@
                       Margin="0 10 0 0"
                       StrokeThickness="1"
                       Stroke="#F1D881"/>
-                <TextBlock Text="Цена"
+                <TextBlock Text="{Binding Path=Cost}"
                            FontSize="30"
                            HorizontalAlignment="Center"
                            Margin="0 10 0 0"
@@ -113,10 +145,17 @@
                            FontFamily="Garamond"/>
             </StackPanel>
         </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+     
         <Frame Grid.Column="1"
-               Grid.Row="1"
-               Width="647"
-               Height="379"
+               Grid.Row="0"
+               Grid.RowSpan="2"
+               Width="785"
+               NavigationUIVisibility="Hidden"
+               Height="833"
                x:Name="frame"/>
     </Grid>
 </Window>

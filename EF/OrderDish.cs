@@ -17,7 +17,7 @@ namespace TortugasKarpenko.EF
         public int OrderId { get; set; }
         public int DishId { get; set; }
         public int Qty { get; set; }
-        public int WaiterId { get; set; }
+        public Nullable<int> WaiterId { get; set; }
     
         public virtual Dish Dish { get; set; }
         public virtual Employee Employee { get; set; }

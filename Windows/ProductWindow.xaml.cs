@@ -23,10 +23,25 @@ namespace TortugasKarpenko.Windows
         {
             InitializeComponent();
         }
+        public ProductWindow(int IdDish)
+        {
+            InitializeComponent();
+            LvProduct.ItemsSource = ClassHelper.AppData.context.Dish.Where(i => i.Id == IdDish).ToList();
+        }
 
         private void txbClose_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            
             Close();
         }
+
+        private void txbAdd_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            EF.Order order= new EF.Order();
+            order.TableId = MainWindow.Number;
+            MessageBox.Show("Товар добавлен");
+        }
+
+      
     }
 }

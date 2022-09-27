@@ -7,29 +7,51 @@
         mc:Ignorable="d"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        Title="ProductWindow" Height="379" Width="647">
-    <Border BorderBrush="#F1D881" BorderThickness="2">
-        <Grid Background="#443020">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <StackPanel>
-                <Image Height="173"
+        Title="ProductWindow" Height="390" Width="660"
+        MinHeight="379" MinWidth="647">
+    <ListView x:Name="LvProduct" 
+                  Background="#443020"
+              Height="379" Width="647"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                >
+
+        <ListView.ItemsPanel>
+            <ItemsPanelTemplate >
+                <WrapPanel/>
+            </ItemsPanelTemplate>
+        </ListView.ItemsPanel>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <!--<Border BorderBrush="#F1D881" Height="379" Width="647" BorderThickness="2">
+
+                    <Grid Background="#443020">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <Image Height="173"
                Width="200"
                VerticalAlignment="Top"
                Margin="0 20 0 0"/>
-                <TextBlock Text="Описание" 
+                            <TextBlock Text="Описание" 
                    FontSize="30"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Center"
                    FontFamily="Garamond"
                        Margin="0 10 0 0"
                    Foreground="#F1D881"/>
-            </StackPanel>
-
-            <TextBlock Text="Название" 
+                        </StackPanel>
+                        <TextBlock Text="{Binding Path=Description}" 
+                   FontSize="25"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   FontFamily="Garamond"
+                       Margin="10 100 0 0"
+                       Grid.ColumnSpan="2"
+                   Foreground="#F1D881"/>
+                        <TextBlock Text="{Binding Path=Title}" 
                    FontSize="30"
                    Grid.Column="1"
                    VerticalAlignment="Top"
@@ -37,66 +59,180 @@
                    FontFamily="Garamond"
                    Margin="10"
                    Foreground="#F1D881"/>
-            <StackPanel   Grid.Column="2">
-                <WrapPanel>
-                    <TextBlock Text="Цена" 
+
+                        <TextBlock Text="{Binding Path=Cost}" 
                    FontSize="30"
-                 
+                 Grid.Column="2"
                    VerticalAlignment="Top"
-                   HorizontalAlignment="Center"
+                   HorizontalAlignment="Left"
                    FontFamily="Garamond"
-                   Margin="70 10 0 0"
-                   Foreground="#F1D881"/> 
-                    <TextBlock Text="X" 
+                   Margin="10 10 0 0"
+                   Foreground="#F1D881"/>
+                        <TextBlock Text="X" 
                    FontSize="30"
+                       Grid.Column="2"
+                       Margin="10"
                                x:Name="txbClose"
                                MouseDown="txbClose_MouseDown"
                    VerticalAlignment="Top"
-                   HorizontalAlignment="Center"
+                   HorizontalAlignment="Right"
                    FontFamily="Garamond"
-                   Margin="50 10 0 0"
                    Foreground="#F1D881"/>
-                </WrapPanel>
-              
-                <WrapPanel Margin="0 40 0 0">
-                    <TextBlock Text="-" 
-                   Margin="70 10 0 0"
+
+
+
+                        <TextBlock Text="-" 
                    FontSize="30"
-                 
-                   VerticalAlignment="Top"
+                   Grid.Column="2"
+                   VerticalAlignment="Center"
                    HorizontalAlignment="Center"
+                       Margin="0 0 50 100"
                    FontFamily="Garamond"
  
                    Foreground="#F1D881"/>
 
-                    <TextBlock Text="0" 
+                        <TextBlock Text="0" 
                    FontSize="30"
-                 
-                   VerticalAlignment="Top"
+                                Grid.Column="2"
+                  VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                       Margin="0 0 10 100"
+                   FontFamily="Garamond"
+                   Foreground="#F1D881"/>
+
+                        <TextBlock Text="+" 
+                   FontSize="30"
+                    Grid.Column="2"
+                  VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                       Margin="40 0 0 100"
+                   FontFamily="Garamond"
+                   Foreground="#F1D881"/>
+
+                        <TextBlock Text="Добавить" 
+                   FontSize="30"
+                           Grid.Column="2"
+                           x:Name="txbAdd"
+                 MouseDown="txbAdd_MouseDown"
+                   VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    FontFamily="Garamond"
                    Margin="10"
                    Foreground="#F1D881"/>
 
-                    <TextBlock Text="+" 
+
+                    </Grid>
+                </Border>-->
+                <Border BorderBrush="#F1D881"  Height="370" Width="640" BorderThickness="2">
+
+                    <Grid Background="#443020">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <Image Height="173"
+               Width="200"
+               VerticalAlignment="Top"
+               Margin="0 20 0 0"/>
+                            <TextBlock Text="Описание" 
                    FontSize="30"
-                 
                    VerticalAlignment="Top"
                    HorizontalAlignment="Center"
                    FontFamily="Garamond"
-                   Margin="0 10"
+                       Margin="0 10 0 0"
                    Foreground="#F1D881"/>
-                </WrapPanel>
-                <TextBlock Text="Добавить" 
-                   FontSize="30"
-                 
+                        </StackPanel>
+                        <TextBlock Text="{Binding Path=Description}" 
+                   FontSize="25"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   FontFamily="Garamond"
+                       Margin="10 200 0 0"
+                       Grid.ColumnSpan="2"
+                                   TextWrapping="Wrap"
+                   Foreground="#F1D881"/>
+                        <TextBlock Text="{Binding Path=Title}" 
+                   FontSize="25"
+                                   TextWrapping="Wrap"
+                   Grid.Column="1"
                    VerticalAlignment="Top"
+                   HorizontalAlignment="Left"
+                   FontFamily="Garamond"
+                   Margin="10"
+                       
+                   Foreground="#F1D881"/>
+
+                        <TextBlock Text="{Binding Path=Cost}" 
+                   FontSize="30"
+                 Grid.Column="2"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   FontFamily="Garamond"
+                   Margin="10 10 0 0"
+                   Foreground="#F1D881"/>
+                        <TextBlock Text="X" 
+                   FontSize="30"
+                       Grid.Column="2"
+                       Margin="10"
+                               x:Name="txbClose"
+                               MouseDown="txbClose_MouseDown"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Right"
+                   FontFamily="Garamond"
+                   Foreground="#F1D881"/>
+
+
+
+                        <!--<TextBlock Text="-" 
+                   FontSize="30"
+                   Grid.Column="2"
+                                   x:Name="txbMin"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                       Margin="0 0 50 100"
+                   FontFamily="Garamond"
+                                   MouseDown="txbMin_MouseDown"
+                   Foreground="#F1D881"/>
+
+                        <TextBlock Text="0" 
+                   FontSize="30"
+                                   x:Name="txbQty"
+                                Grid.Column="2"
+                  VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                       Margin="0 0 10 100"
+                   FontFamily="Garamond"
+                   Foreground="#F1D881" Initialized="txbQty_Initialized"/>
+
+                        <TextBlock Text="+" 
+                   FontSize="30"
+                                   x:Name="txbPlus"
+                                   MouseDown="txbPlus_MouseDown"
+                    Grid.Column="2"
+                  VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                       Margin="40 0 0 100"
+                   FontFamily="Garamond"
+                   Foreground="#F1D881"/>-->
+
+                        <TextBlock Text="Добавить" 
+                   FontSize="30"
+                           Grid.Column="2"
+                           x:Name="txbAdd"
+                 MouseDown="txbAdd_MouseDown"
+                   VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    FontFamily="Garamond"
                    Margin="10"
                    Foreground="#F1D881"/>
-            </StackPanel>
 
-        </Grid>
-    </Border>
+
+                    </Grid>
+                </Border>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+   
 </Window>

@@ -8,7 +8,28 @@
       d:DesignHeight="833" d:DesignWidth="785"
       Title="OrderPage">
 
-    <Grid Background="#D5921A">
+    <Grid Background="#D5921A" MouseLeave="Grid_MouseLeave" >
+        <ListView x:Name="LVPage" 
+                  Height="633"
+                  Grid.Row="1" 
+                  Background="#D5921A"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  SelectionChanged="LVCatalog_SelectionChanged"
+              
+                >
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate >
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                   
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <TextBlock Text="Заказ" 
                    FontFamily="Garamond" 
                    FontSize="36" 
@@ -16,6 +37,20 @@
                    HorizontalAlignment="Center"
                    Margin="0 10 0 0"/>
         <Line X1="40" X2="740"
-              Y1="70" Y2="70"/>
+              Y1="70" Y2="70"
+              StrokeThickness="2"
+              Stroke="Black"/>
+        
+        <Button Content="Оплатить" 
+                Width="270"
+                x:Name="btnPay"
+                Click="btnPay_Click"
+                Background="#443020"
+                FontFamily="Garamond" 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Margin="0 0 0 30"
+                FontSize="36"
+                Height="63"/>
     </Grid>
 </Page>

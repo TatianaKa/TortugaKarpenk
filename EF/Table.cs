@@ -17,7 +17,7 @@ namespace TortugasKarpenko.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Table()
         {
-            this.Booking = new HashSet<Booking>();
+            this.Book = new HashSet<Book>();
             this.Order = new HashSet<Order>();
         }
     
@@ -25,7 +25,7 @@ namespace TortugasKarpenko.EF
         public int QtySit { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Booking> Booking { get; set; }
+        public virtual ICollection<Book> Book { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Order { get; set; }
     }

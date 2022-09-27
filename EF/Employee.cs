@@ -24,10 +24,10 @@ namespace TortugasKarpenko.EF
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public int Salary { get; set; }
+        public Nullable<int> RoleId { get; set; }
         public string Phone { get; set; }
-        public int PostId { get; set; }
     
-        public virtual Post Post { get; set; }
+        public virtual Role Role { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDish> OrderDish { get; set; }
     }

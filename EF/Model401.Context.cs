@@ -25,14 +25,14 @@ namespace TortugasKarpenko.EF
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Booking> Booking { get; set; }
+        public virtual DbSet<Book> Book { get; set; }
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Dish> Dish { get; set; }
         public virtual DbSet<Employee> Employee { get; set; }
         public virtual DbSet<Ingridient> Ingridient { get; set; }
         public virtual DbSet<Order> Order { get; set; }
         public virtual DbSet<OrderDish> OrderDish { get; set; }
-        public virtual DbSet<Post> Post { get; set; }
+        public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Table> Table { get; set; }
     }
