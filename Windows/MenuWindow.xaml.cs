@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -11,11 +12,19 @@ namespace TortugasKarpenko.Windows
     /// </summary>
     public partial class MenuWindow : Window
     {
+        public static int OrderId;
         public MenuWindow()
         {
             InitializeComponent();
             LVCatalog.ItemsSource = ClassHelper.AppData.context.Category.ToList();
 
+            EF.Order order = new EF.Order();
+            order.TableId = MainWindow.Number;
+            order.DateOrder = DateTime.Now;
+            order.FinishCost = 10000;
+            ClassHelper.AppData.context.Order.Add(order);
+            ClassHelper.AppData.context.SaveChanges();
+            OrderId = order.Id;
 
         }
 

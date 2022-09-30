@@ -23,9 +23,11 @@ namespace TortugasKarpenko
     public partial class MainWindow : Window
     {
         public static int Number;
+
         public MainWindow()
         {
             InitializeComponent();
+           
         }
 
         private void btnTableOne_Click(object sender, RoutedEventArgs e)

@@ -9,13 +9,12 @@
       Title="OrderPage">
 
     <Grid Background="#D5921A" MouseLeave="Grid_MouseLeave" >
-        <ListView x:Name="LVPage" 
+        <ListView x:Name="LvOrder" 
                   Height="633"
                   Grid.Row="1" 
                   Background="#D5921A"
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                  SelectionChanged="LVCatalog_SelectionChanged"
-              
+              SelectionChanged="LvOrder_SelectionChanged"
                 >
 
             <ListView.ItemsPanel>
@@ -25,8 +24,128 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                   
+                    <!--<Grid  Background="#D5921A" 
+                           Height="50"
+                           Width="785" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.5*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Dish.Title}" 
+                       FontFamily="Garamond" 
+                       FontSize="30"
+                   Margin="10 0 0 0"
+                   Foreground="Black"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Dish.Weight}" 
+                       FontFamily="Garamond" 
+                       FontSize="30"
+                   Foreground="Black"
+                   Grid.Column="1"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+                        <TextBlock Text="гр." 
+                       FontFamily="Garamond" 
+                       FontSize="30"
+                   Margin="10 0"
+                   Grid.Column="1"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Path=Qty}" 
+                   Grid.Column="2"
+                       FontFamily="Garamond" 
+                   Foreground="Black"
+                       FontSize="30"
+                   HorizontalAlignment="Center"
+                   Margin="0 0 0 0"
+                   VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Dish.Cost}" 
+                   Grid.Column="2"
+                   Foreground="Black"
+                       FontFamily="Garamond" 
+                       FontSize="30"
+                   Margin="0 0 10 0"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"/>
+                    </Grid>-->
+                    <Grid Height="50" Width="785"  Background="#D5921A" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Dish.Title}" 
+                       FontFamily="Garamond" 
+                       FontSize="30"
+                         Margin="10 0 0 0"
+                         Foreground="Black"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Dish.Weight}" 
+                       FontFamily="Garamond" 
+                       FontSize="30"
+                         Foreground="Black"
+                      Grid.Column="1"
+                                   Margin="0 0 10 0"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+                        <TextBlock Text="гр." 
+                       FontFamily="Garamond" 
+                       FontSize="30"
+                   Margin="10 0"
+                   Grid.Column="1"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"/>
+                        <WrapPanel Grid.Column="2">
+                            <TextBlock Text="-"
+                       Margin="10 10"
+                                       x:Name="txbMinus"
+                                       MouseDown="txbMinus_MouseDown"
+                                       VerticalAlignment="Center"
+                        FontFamily="Garamond" 
+                                       
+                        Foreground="Black"
+                       FontSize="30"/>
+                            <TextBlock Text="{Binding Path=Qty}" 
+                   Grid.Column="2"
+                       FontFamily="Garamond" 
+                   Foreground="Black"
+                       FontSize="30"
+                        HorizontalAlignment="Center"
+                   Margin="5 10 10 0"
+                   VerticalAlignment="Center"/>
+                            <TextBlock Text="+"
+                       Margin="10 10"
+                                       x:Name="txbPlus"
+                                       MouseDown="txbPlus_MouseDown"
+                                       VerticalAlignment="Center"
+                        FontFamily="Garamond" 
+                        Foreground="Black"
+                       FontSize="30"/>
+                            <TextBlock Text="{Binding Dish.Cost}" 
+                   Grid.Column="2"
+                                       
+                   Foreground="Black"
+                       FontFamily="Garamond" 
+                       FontSize="30"
+                   Margin="10 10 0 0"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"/>
+                            <TextBlock Text="X" 
+                                       x:Name="txbDelete"
+                                       MouseDown="txbDelete_MouseDown"
+                   Grid.Column="2"
+                   Foreground="Black"
+                       FontFamily="Garamond" 
+                       FontSize="30"
+                   Margin="15 10 0 0"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"/>
+                        </WrapPanel>
 
+                    </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

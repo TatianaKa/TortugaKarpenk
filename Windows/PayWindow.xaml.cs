@@ -23,5 +23,31 @@ namespace TortugasKarpenko.Windows
         {
             InitializeComponent();
         }
+
+        private void btnExit_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnPay_Click(object sender, RoutedEventArgs e)
+        {
+            if (chbCard.IsChecked == true && chbNal.IsChecked == true)
+            {
+                MessageBox.Show("Нельзя выбрать сразу два пункта");
+               
+            }
+            else if (chbCard.IsChecked == true || chbNal.IsChecked == true)
+            {
+                MessageBox.Show("Оплата успешно прошла");
+                MenuWindow menu = new MenuWindow();
+                menu.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Выберите способ оплаты");
+            }
+           
+        }
     }
 }
