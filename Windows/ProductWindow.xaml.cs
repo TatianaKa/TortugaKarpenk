@@ -1,7 +1,7 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Windows;
 using System.Windows.Input;
+using TortugasKarpenko.Pages;
 
 namespace TortugasKarpenko.Windows
 {
@@ -10,9 +10,7 @@ namespace TortugasKarpenko.Windows
     /// </summary>
     public partial class ProductWindow : Window
     {
-        int Cost;
-        public static int DishId;
-        public static int OrderId;
+        public static int dishId;
         public ProductWindow()
         {
             InitializeComponent();
@@ -20,24 +18,24 @@ namespace TortugasKarpenko.Windows
         public ProductWindow(int IdDish)
         {
             InitializeComponent();
-            DishId = IdDish;
-            Cost = Convert.ToInt32(ClassHelper.AppData.context.Dish.Where(i => i.Id == IdDish).FirstOrDefault().Cost);
+            dishId = IdDish;
             LvProduct.ItemsSource = ClassHelper.AppData.context.Dish.Where(i => i.Id == IdDish).ToList();
 
         }
-
         private void txbClose_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
             Close();
         }
 
         private void txbAdd_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            decimal cost = ClassHelper.AppData.context.Dish.Where(i => i.Id == dishId).First().Cost;
             EF.OrderDish orderDish = new EF.OrderDish();
-            orderDish.DishId = DishId;
-            orderDish.OrderId = MenuWindow.OrderId;
+            orderDish.DishId = dishId;
+            orderDish.OrderId = MainWindow.orderId;
             orderDish.Qty = 1;
+            orderDish.Cost = cost;
+            OrderPage orderPage = new OrderPage(orderDish);
             ClassHelper.AppData.context.OrderDish.Add(orderDish);
             ClassHelper.AppData.context.SaveChanges();
             var mes = MessageBox.Show("Товар добавлен");

@@ -11,19 +11,19 @@
         <EntityTypeShape EntityType="TortugasKarpenkoModel.Employee" Width="1.5" PointX="3" PointY="6.625" />
         <EntityTypeShape EntityType="TortugasKarpenkoModel.Ingridient" Width="1.5" PointX="5.25" PointY="10.625" />
         <EntityTypeShape EntityType="TortugasKarpenkoModel.Order" Width="1.5" PointX="3" PointY="3.75" />
-        <EntityTypeShape EntityType="TortugasKarpenkoModel.OrderDish" Width="1.5" PointX="5.25" PointY="3.625" />
         <EntityTypeShape EntityType="TortugasKarpenkoModel.Role" Width="1.5" PointX="0.75" PointY="7.125" />
         <EntityTypeShape EntityType="TortugasKarpenkoModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" />
         <EntityTypeShape EntityType="TortugasKarpenkoModel.Table" Width="1.5" PointX="0.75" PointY="2.625" />
         <AssociationConnector Association="TortugasKarpenkoModel.FK_Booking_Table" />
         <AssociationConnector Association="TortugasKarpenkoModel.FK_Dish_Category" />
-        <AssociationConnector Association="TortugasKarpenkoModel.FK_OrderDish_Dish" />
         <AssociationConnector Association="TortugasKarpenkoModel.FK_Employee_Role" />
-        <AssociationConnector Association="TortugasKarpenkoModel.FK_OrderDish_Employee" />
         <AssociationConnector Association="TortugasKarpenkoModel.FK_Order_Table" />
-        <AssociationConnector Association="TortugasKarpenkoModel.FK_OrderDish_Order" />
         <AssociationConnector Association="TortugasKarpenkoModel.IngridientDish" />
-      </Diagram>
+        <EntityTypeShape EntityType="TortugasKarpenkoModel.OrderDish" Width="1.5" PointX="5.25" PointY="7" />
+        <AssociationConnector Association="TortugasKarpenkoModel.FK_OrderDish_Dish" />
+        <AssociationConnector Association="TortugasKarpenkoModel.FK_OrderDish_Employee" />
+        <AssociationConnector Association="TortugasKarpenkoModel.FK_OrderDish_Order" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

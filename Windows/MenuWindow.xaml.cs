@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -12,27 +11,17 @@ namespace TortugasKarpenko.Windows
     /// </summary>
     public partial class MenuWindow : Window
     {
-        public static int OrderId;
         public MenuWindow()
         {
             InitializeComponent();
             LVCatalog.ItemsSource = ClassHelper.AppData.context.Category.ToList();
-
-            EF.Order order = new EF.Order();
-            order.TableId = MainWindow.Number;
-            order.DateOrder = DateTime.Now;
-            order.FinishCost = 10000;
-            ClassHelper.AppData.context.Order.Add(order);
-            ClassHelper.AppData.context.SaveChanges();
-            OrderId = order.Id;
-
         }
 
         private void txbBack_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MainWindow main = new MainWindow();
             main.Show();
-            Close();
+            this.Close();
         }
 
         private void txbClose_MouseDown(object sender, MouseButtonEventArgs e)
@@ -43,7 +32,6 @@ namespace TortugasKarpenko.Windows
         private void txbOrder_MouseDown(object sender, MouseButtonEventArgs e)
         {
             frame.Navigate(new OrderPage());
-
         }
 
         private void LVCatalog_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -180,7 +180,7 @@
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"/>
         <WrapPanel Grid.Column="2">
-            <TextBlock Text="-"
+            <Button Content="-"
                        Margin="10 0"
                         FontFamily="Garamond" 
                         Foreground="Black"
@@ -193,7 +193,7 @@
                         HorizontalAlignment="Center"
                    Margin="5 10 10 0"
                    VerticalAlignment="Center"/>
-            <TextBlock Text="+"
+            <Button Content="+"
                        Margin="10 10"
                         FontFamily="Garamond" 
                         Foreground="Black"
@@ -217,5 +217,4 @@
         </WrapPanel>
        
     </Grid>-->
-
 </Page>

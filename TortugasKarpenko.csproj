@@ -65,7 +65,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ClassHelper\AppData.cs" />
-    <Compile Include="ClassHelper\Class1.cs" />
     <Compile Include="EF\Book.cs">
       <DependentUpon>ModelHome.tt</DependentUpon>
     </Compile>

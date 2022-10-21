@@ -69,13 +69,14 @@
         </EntityType>
         <EntityType Name="OrderDish">
           <Key>
-            <PropertyRef Name="OrderId" />
-            <PropertyRef Name="DishId" />
+            <PropertyRef Name="Id" />
           </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderId" Type="int" Nullable="false" />
           <Property Name="DishId" Type="int" Nullable="false" />
           <Property Name="Qty" Type="int" Nullable="false" />
           <Property Name="WaiterId" Type="int" />
+          <Property Name="DishCost" Type="int" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -269,7 +270,6 @@
           <EntitySet Name="Employee" EntityType="TortugasKarpenkoModel.Employee" />
           <EntitySet Name="Ingridient" EntityType="TortugasKarpenkoModel.Ingridient" />
           <EntitySet Name="Order" EntityType="TortugasKarpenkoModel.Order" />
-          <EntitySet Name="OrderDish" EntityType="TortugasKarpenkoModel.OrderDish" />
           <EntitySet Name="Role" EntityType="TortugasKarpenkoModel.Role" />
           <EntitySet Name="sysdiagrams" EntityType="TortugasKarpenkoModel.sysdiagrams" />
           <EntitySet Name="Table" EntityType="TortugasKarpenkoModel.Table" />
@@ -281,31 +281,32 @@
             <End Role="Category" EntitySet="Category" />
             <End Role="Dish" EntitySet="Dish" />
           </AssociationSet>
-          <AssociationSet Name="FK_OrderDish_Dish" Association="TortugasKarpenkoModel.FK_OrderDish_Dish">
-            <End Role="Dish" EntitySet="Dish" />
-            <End Role="OrderDish" EntitySet="OrderDish" />
-          </AssociationSet>
           <AssociationSet Name="FK_Employee_Role" Association="TortugasKarpenkoModel.FK_Employee_Role">
             <End Role="Role" EntitySet="Role" />
             <End Role="Employee" EntitySet="Employee" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrderDish_Employee" Association="TortugasKarpenkoModel.FK_OrderDish_Employee">
-            <End Role="Employee" EntitySet="Employee" />
-            <End Role="OrderDish" EntitySet="OrderDish" />
           </AssociationSet>
           <AssociationSet Name="FK_Order_Table" Association="TortugasKarpenkoModel.FK_Order_Table">
             <End Role="Table" EntitySet="Table" />
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
-          <AssociationSet Name="FK_OrderDish_Order" Association="TortugasKarpenkoModel.FK_OrderDish_Order">
-            <End Role="Order" EntitySet="Order" />
-            <End Role="OrderDish" EntitySet="OrderDish" />
-          </AssociationSet>
           <AssociationSet Name="IngridientDish" Association="TortugasKarpenkoModel.IngridientDish">
             <End Role="Dish" EntitySet="Dish" />
             <End Role="Ingridient" EntitySet="Ingridient" />
           </AssociationSet>
-        </EntityContainer>
+          <EntitySet Name="OrderDish" EntityType="TortugasKarpenkoModel.OrderDish" />
+          <AssociationSet Name="FK_OrderDish_Dish" Association="TortugasKarpenkoModel.FK_OrderDish_Dish">
+            <End Role="Dish" EntitySet="Dish" />
+            <End Role="OrderDish" EntitySet="OrderDish" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDish_Employee" Association="TortugasKarpenkoModel.FK_OrderDish_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="OrderDish" EntitySet="OrderDish" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDish_Order" Association="TortugasKarpenkoModel.FK_OrderDish_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderDish" EntitySet="OrderDish" />
+          </AssociationSet>
+          </EntityContainer>
         <EntityType Name="Book">
           <Key>
             <PropertyRef Name="Id" />
@@ -335,8 +336,8 @@
           <Property Name="CategoryId" Type="Int32" />
           <Property Name="ImagePath" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Category" Relationship="TortugasKarpenkoModel.FK_Dish_Category" FromRole="Dish" ToRole="Category" />
-          <NavigationProperty Name="OrderDish" Relationship="TortugasKarpenkoModel.FK_OrderDish_Dish" FromRole="Dish" ToRole="OrderDish" />
           <NavigationProperty Name="Ingridient" Relationship="TortugasKarpenkoModel.IngridientDish" FromRole="Dish" ToRole="Ingridient" />
+          <NavigationProperty Name="OrderDish" Relationship="TortugasKarpenkoModel.FK_OrderDish_Dish" FromRole="Dish" ToRole="OrderDish" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -369,19 +370,6 @@
           <Property Name="FinishCost" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
           <NavigationProperty Name="Table" Relationship="TortugasKarpenkoModel.FK_Order_Table" FromRole="Order" ToRole="Table" />
           <NavigationProperty Name="OrderDish" Relationship="TortugasKarpenkoModel.FK_OrderDish_Order" FromRole="Order" ToRole="OrderDish" />
-        </EntityType>
-        <EntityType Name="OrderDish">
-          <Key>
-            <PropertyRef Name="OrderId" />
-            <PropertyRef Name="DishId" />
-          </Key>
-          <Property Name="OrderId" Type="Int32" Nullable="false" />
-          <Property Name="DishId" Type="Int32" Nullable="false" />
-          <Property Name="Qty" Type="Int32" Nullable="false" />
-          <Property Name="WaiterId" Type="Int32" />
-          <NavigationProperty Name="Dish" Relationship="TortugasKarpenkoModel.FK_OrderDish_Dish" FromRole="OrderDish" ToRole="Dish" />
-          <NavigationProperty Name="Employee" Relationship="TortugasKarpenkoModel.FK_OrderDish_Employee" FromRole="OrderDish" ToRole="Employee" />
-          <NavigationProperty Name="Order" Relationship="TortugasKarpenkoModel.FK_OrderDish_Order" FromRole="OrderDish" ToRole="Order" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -434,18 +422,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_OrderDish_Dish">
-          <End Type="TortugasKarpenkoModel.Dish" Role="Dish" Multiplicity="1" />
-          <End Type="TortugasKarpenkoModel.OrderDish" Role="OrderDish" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Dish">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="OrderDish">
-              <PropertyRef Name="DishId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Employee_Role">
           <End Type="TortugasKarpenkoModel.Role" Role="Role" Multiplicity="0..1" />
           <End Type="TortugasKarpenkoModel.Employee" Role="Employee" Multiplicity="*" />
@@ -455,18 +431,6 @@
             </Principal>
             <Dependent Role="Employee">
               <PropertyRef Name="RoleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_OrderDish_Employee">
-          <End Type="TortugasKarpenkoModel.Employee" Role="Employee" Multiplicity="0..1" />
-          <End Type="TortugasKarpenkoModel.OrderDish" Role="OrderDish" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employee">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="OrderDish">
-              <PropertyRef Name="WaiterId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -482,6 +446,48 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="IngridientDish">
+          <End Type="TortugasKarpenkoModel.Dish" Role="Dish" Multiplicity="*" />
+          <End Type="TortugasKarpenkoModel.Ingridient" Role="Ingridient" Multiplicity="*" />
+        </Association>
+        <EntityType Name="OrderDish">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="DishId" Type="Int32" Nullable="false" />
+          <Property Name="Qty" Type="Int32" Nullable="false" />
+          <Property Name="WaiterId" Type="Int32" />
+          <Property Name="DishCost" Type="Int32" />
+          <NavigationProperty Name="Dish" Relationship="TortugasKarpenkoModel.FK_OrderDish_Dish" FromRole="OrderDish" ToRole="Dish" />
+          <NavigationProperty Name="Employee" Relationship="TortugasKarpenkoModel.FK_OrderDish_Employee" FromRole="OrderDish" ToRole="Employee" />
+          <NavigationProperty Name="Order" Relationship="TortugasKarpenkoModel.FK_OrderDish_Order" FromRole="OrderDish" ToRole="Order" />
+        </EntityType>
+        <Association Name="FK_OrderDish_Dish">
+          <End Type="TortugasKarpenkoModel.Dish" Role="Dish" Multiplicity="1" />
+          <End Type="TortugasKarpenkoModel.OrderDish" Role="OrderDish" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dish">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderDish">
+              <PropertyRef Name="DishId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDish_Employee">
+          <End Type="TortugasKarpenkoModel.Employee" Role="Employee" Multiplicity="0..1" />
+          <End Type="TortugasKarpenkoModel.OrderDish" Role="OrderDish" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderDish">
+              <PropertyRef Name="WaiterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_OrderDish_Order">
           <End Type="TortugasKarpenkoModel.Order" Role="Order" Multiplicity="1" />
           <End Type="TortugasKarpenkoModel.OrderDish" Role="OrderDish" Multiplicity="*" />
@@ -493,10 +499,6 @@
               <PropertyRef Name="OrderId" />
             </Dependent>
           </ReferentialConstraint>
-        </Association>
-        <Association Name="IngridientDish">
-          <End Type="TortugasKarpenkoModel.Dish" Role="Dish" Multiplicity="*" />
-          <End Type="TortugasKarpenkoModel.Ingridient" Role="Ingridient" Multiplicity="*" />
         </Association>
         </Schema>
     </edmx:ConceptualModels>
@@ -564,16 +566,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="OrderDish">
-            <EntityTypeMapping TypeName="TortugasKarpenkoModel.OrderDish">
-              <MappingFragment StoreEntitySet="OrderDish">
-                <ScalarProperty Name="WaiterId" ColumnName="WaiterId" />
-                <ScalarProperty Name="Qty" ColumnName="Qty" />
-                <ScalarProperty Name="DishId" ColumnName="DishId" />
-                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Role">
             <EntityTypeMapping TypeName="TortugasKarpenkoModel.Role">
               <MappingFragment StoreEntitySet="Role">
@@ -609,6 +601,18 @@
               <ScalarProperty Name="Id" ColumnName="DishId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="OrderDish">
+            <EntityTypeMapping TypeName="TortugasKarpenkoModel.OrderDish">
+              <MappingFragment StoreEntitySet="OrderDish">
+                <ScalarProperty Name="DishCost" ColumnName="DishCost" />
+                <ScalarProperty Name="WaiterId" ColumnName="WaiterId" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="DishId" ColumnName="DishId" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

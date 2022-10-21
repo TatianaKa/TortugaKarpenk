@@ -17,8 +17,8 @@ namespace TortugasKarpenko.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Dish()
         {
-            this.Ingridient = new HashSet<Ingridient>();
             this.OrderDish = new HashSet<OrderDish>();
+            this.Ingridient = new HashSet<Ingridient>();
         }
     
         public int Id { get; set; }
@@ -31,8 +31,8 @@ namespace TortugasKarpenko.EF
     
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ingridient> Ingridient { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDish> OrderDish { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Ingridient> Ingridient { get; set; }
     }
 }

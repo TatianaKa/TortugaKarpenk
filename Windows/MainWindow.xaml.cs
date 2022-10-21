@@ -1,19 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using TortugasKarpenko.Windows;
-using TortugasKarpenko.Pages;
 
 namespace TortugasKarpenko
 {
@@ -22,18 +10,37 @@ namespace TortugasKarpenko
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static int Number;
-
+        int number;
+        public static int orderId { get; set; }
+        private void CreateOrder()
+        {
+            try
+            {
+                EF.Order order = new EF.Order();
+                order.TableId = number;
+                order.DateOrder = DateTime.Now;
+                ClassHelper.AppData.context.Order.Add(order);
+                ClassHelper.AppData.context.SaveChanges();
+                orderId = order.Id;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                throw;
+            }
+           
+        }
         public MainWindow()
         {
             InitializeComponent();
-           
+
         }
 
         private void btnTableOne_Click(object sender, RoutedEventArgs e)
         {
-            Number = 1;
+            number = 1;
             MenuWindow menuWindow = new MenuWindow();
+            CreateOrder();
             menuWindow.Show();
             Close();
         }
@@ -46,92 +53,103 @@ namespace TortugasKarpenko
 
         private void btnTableTwo_Click(object sender, RoutedEventArgs e)
         {
-            Number = 2;
+            number = 2;
             MenuWindow menuWindow = new MenuWindow();
+            CreateOrder();
             menuWindow.Show();
             Close();
         }
 
         private void btnTableThree_Click(object sender, RoutedEventArgs e)
-        
+
         {
-            Number = 3;
+            number = 3;
             MenuWindow menuWindow = new MenuWindow();
+            CreateOrder();
             menuWindow.Show();
             Close();
         }
 
         private void btnTableFo_Click(object sender, RoutedEventArgs e)
         {
-            Number = 4;
+            number = 4;
             MenuWindow menuWindow = new MenuWindow();
+            CreateOrder();
             menuWindow.Show();
             Close();
         }
 
         private void btnTableFive_Click(object sender, RoutedEventArgs e)
         {
-            Number = 5;
+            number = 5;
             MenuWindow menuWindow = new MenuWindow();
+            CreateOrder();
             menuWindow.Show();
             Close();
         }
 
         private void btnTableSix_Click(object sender, RoutedEventArgs e)
         {
-            Number = 6;
+            number = 6;
             MenuWindow menuWindow = new MenuWindow();
+            CreateOrder();
             menuWindow.Show();
             Close();
         }
         private void btnTableSeven_Click(object sender, RoutedEventArgs e)
         {
-            Number = 7;
+            number = 7;
             MenuWindow menuWindow = new MenuWindow();
+            CreateOrder();
             menuWindow.Show();
             Close();
         }
 
         private void btnTableEight_Click(object sender, RoutedEventArgs e)
         {
-            Number = 8;
+            number = 8;
             MenuWindow menuWindow = new MenuWindow();
+            CreateOrder();
             menuWindow.Show();
             Close();
         }
 
         private void btnTableNine_Click(object sender, RoutedEventArgs e)
         {
-            Number = 9;
+            number = 9;
             MenuWindow menuWindow = new MenuWindow();
+            CreateOrder();
             menuWindow.Show();
             Close();
         }
 
         private void btnTableTen_Click(object sender, RoutedEventArgs e)
         {
-            Number = 10;
+            number = 10;
             MenuWindow menuWindow = new MenuWindow();
+            CreateOrder();
             menuWindow.Show();
             Close();
         }
 
         private void btnTableEleven_Click(object sender, RoutedEventArgs e)
         {
-            Number = 11;
+            number = 11;
             MenuWindow menuWindow = new MenuWindow();
+            CreateOrder();
             menuWindow.Show();
             Close();
         }
 
         private void btnTableTwelf_Click(object sender, RoutedEventArgs e)
         {
-            Number = 12;
+            number = 12;
             MenuWindow menuWindow = new MenuWindow();
+            CreateOrder();
             menuWindow.Show();
             Close();
         }
 
-        
+
     }
 }
