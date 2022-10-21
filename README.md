@@ -6,7 +6,8 @@
   <body>
 <p>Данный проект разрабатывался для кафе "Tortuga'S"<br>
   <div> Диаграмма базы данных:</div>
-    <p><img  alt="AuthWindow" src="https://github.com/TatianaKa/TortugaKarpenko/blob/master/DBImage.PNG"  </img></p>
+    <p><img  alt="AuthWindow" src="https://github.com/TatianaKa/TortugaKarpenko/blob/master/Res/DB1.PNG"  </img></p>
+     <p><img  alt="AuthWindow" src="https://github.com/TatianaKa/TortugaKarpenko/blob/master/Res/DB2.PNG"  </img></p>
     <div>База данных содержит такие сущности как: Заказ-для того, чтобы увидеть за каким столиком он сделан, когда сделан и итоговая сумма<div/>
     <div>Блюда-содержат в себе название,вес,цену,описание,категорию к которой относится и изображение <div/>
     <div>Категория же содержит в себе номер и название<div/>
@@ -18,6 +19,6 @@
     <div>Должность включает в себя номер и наименование<div/>
     <div>И последнее это бронирование- есть дата и столик<div/>
     <div> Архитектура:</div>
-       <p><img  alt="AuthWindow" src="https://github.com/TatianaKa/TortugaKarpenko/blob/master/Architecture.PNG"  </img></p>
+       <p><img  alt="AuthWindow" src="https://github.com/TatianaKa/TortugaKarpenko/blob/master/Res/Structure.PNG"  </img></p>
   </body>
 </html>
