@@ -31,7 +31,7 @@
                   Grid.Row="1" 
                   Background="#D5921A"
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                  SelectionChanged="LVCatalog_SelectionChanged"
+                  SelectionChanged="LVCatalog_SelectionChanged" d:ItemsSource="{d:SampleData ItemCount=5}"
               
                 >
          
@@ -95,7 +95,7 @@
                   Grid.Column="1"
                   Background="#443020"
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                  SelectionChanged="LVItems_SelectionChanged"
+                  SelectionChanged="LVItems_SelectionChanged" d:ItemsSource="{d:SampleData ItemCount=5}"
                 >
 
             <ListView.ItemsPanel>
@@ -127,10 +127,11 @@
                        Source="{Binding Path=ImagePath}"
                       />
                 <TextBlock Text="{Binding Path=Title}"
-                           FontSize="30"
+                           FontSize="25"
                            HorizontalAlignment="Center"
                            Margin="0 5 0 0"
                            Foreground="#F1D881"
+                            TextWrapping="Wrap"
                            FontFamily="Garamond"/>
                 <Line X1="125" X2="205"
                       Y1="0" Y2="0"
@@ -145,6 +146,7 @@
                            FontFamily="Garamond"/>
             </StackPanel>
         </Border>
+                   
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

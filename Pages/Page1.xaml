@@ -217,4 +217,137 @@
         </WrapPanel>
        
     </Grid>-->
+    <!--<Grid Height="50" Width="785"  Background="#D5921A" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Картошка" 
+                       FontFamily="Garamond" 
+                       FontSize="30"
+                         Margin="10 0 0 0"
+                         Foreground="Black"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Center"/>
+        <WrapPanel    Grid.Column="1">
+            <TextBlock Text="300" 
+                       FontFamily="Garamond" 
+                       FontSize="30"
+                       Foreground="Black"
+                       Margin="10 10 0 0"/>
+            <TextBlock Text="гр." 
+                       FontFamily="Garamond" 
+                       FontSize="30"
+                   Margin="10 10 0 0"
+                   Grid.Column="1"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"/>
+        </WrapPanel>
+        
+        <WrapPanel Grid.Column="2">
+            <TextBlock Text="-"
+                       Margin="10 10 0 10"
+                       x:Name="txbMinus"
+                       MouseDown="txbMinus_MouseDown"
+                        FontFamily="Garamond" 
+                                       
+                        Foreground="Black"
+                       FontSize="30"/>
+            <TextBlock Text="5" 
+                   Grid.Column="2"
+                       FontFamily="Garamond" 
+                   Foreground="Black"
+                       FontSize="30"
+                   Margin="5 10 0 0"
+                   VerticalAlignment="Center"/>
+            <TextBlock Text="+"
+                       Margin="10 10 5 0"
+                                       x:Name="txbPlus"
+                                       MouseDown="txbPlus_MouseDown"
+                                       VerticalAlignment="Center"
+                        FontFamily="Garamond" 
+                        Foreground="Black"
+                       FontSize="30"/>
+            <TextBlock Text="10000" 
+                   Grid.Column="2"
+                                       
+                   Foreground="Black"
+                       FontFamily="Garamond" 
+                       FontSize="30"
+                   Margin="10 10 0 0"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"/>
+            <TextBlock Text="X" 
+                                       x:Name="txbDelete"
+                                       MouseDown="txbDelete_MouseDown"
+                   Grid.Column="2"
+                   Foreground="Black"
+                       FontFamily="Garamond" 
+                       FontSize="30"
+                   Margin="10 10 0 0"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"/>
+        </WrapPanel>
+
+    </Grid>-->
+    <!--MenuWindow-->
+    <!--<Border Grid.Column="1" 
+              Grid.Row="1"
+                Height="308"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="5"
+                 Width="330"
+                BorderBrush="#F1D881"
+                BorderThickness="1">
+        <Grid  Background="#443020">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel
+              Width="330"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+              Height="308"
+              Background="#443020">
+                <Image Width="248" 
+                       Height="173"
+                       VerticalAlignment="Top"
+                       Margin="10"
+                       Source="{Binding Path=ImagePath}"
+                      />
+
+            </StackPanel>
+            <TextBlock Text="Kgjfghjkdfgh djfsghlhsgjkhlsdkjgh jsdhlgkh"
+                           FontSize="20"
+                           HorizontalAlignment="Center"
+                           Margin="0 110 0 0"
+                       VerticalAlignment="Center"
+                           Foreground="#F1D881"
+                            TextWrapping="Wrap"
+                           Grid.RowSpan="2"
+                           FontFamily="Garamond"/>
+            <TextBlock Text="30000"
+                       Grid.Row="1"
+                       VerticalAlignment="Center"
+                           FontSize="30"
+                           HorizontalAlignment="Left"
+                           Margin="40 10 0 0"
+                           Foreground="#F1D881"
+                           FontFamily="Garamond"/>
+            <Button Width="30"
+                    Height="30"
+                    HorizontalAlignment="Right"
+                    Margin="0  0 50 0"
+                    Content="+"
+                    FontSize="20"
+                    Grid.Row="1"
+                    Foreground="#F1D881"
+                    BorderBrush="#F1D881"
+                    Background="{x:Null}"/>
+        </Grid>
+   
+    </Border>-->
 </Page>

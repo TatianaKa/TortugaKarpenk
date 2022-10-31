@@ -47,6 +47,7 @@
                 Height="150"
                 FontFamily="Garamond"
                 FontSize="60"
+                Foreground="#443020"
                 Content="1"
                 Background="#F1D881"
                 x:Name="btnTableOne"
@@ -60,6 +61,7 @@
                 Grid.Row="1"
                 Width="150"
                 Height="150"
+                 Foreground="#443020"
                 Background="#F1D881"
                  x:Name="btnTableTwo"
                 />
@@ -71,6 +73,7 @@
                 Width="150"
                 Height="150"
                 Background="#F1D881"
+                 Foreground="#443020"
                  x:Name="btnTableThree"
                 Click="btnTableThree_Click"
                 />
@@ -82,6 +85,7 @@
                 Width="150"
                 Height="150"
                 Background="#F1D881"
+                 Foreground="#443020"
                  x:Name="btnTableFo"
                 Click="btnTableFo_Click"
                 />
@@ -92,6 +96,7 @@
                 Grid.Row="2"
                 Width="150"
                 Height="150"
+                 Foreground="#443020"
                 Background="#F1D881"
                  x:Name="btnTableFive"
                 Click="btnTableFive_Click"
@@ -104,6 +109,7 @@
                 Width="150"
                 Height="150"
                 Background="#F1D881"
+                 Foreground="#443020"
                  x:Name="btnTableSix"
                 Click="btnTableSix_Click"
                 />
@@ -115,6 +121,7 @@
                 Width="150"
                 Height="150"
                 Background="#F1D881"
+                 Foreground="#443020"
                  x:Name="btnTableSeven"
                 Click="btnTableSeven_Click"
                 />
@@ -126,6 +133,7 @@
                 Width="150"
                 Height="150"
                 Background="#F1D881"
+                 Foreground="#443020"
                  x:Name="btnTableEight"
                 Click="btnTableEight_Click"
                 />
@@ -137,6 +145,7 @@
                 Width="150"
                 Height="150"
                 Background="#F1D881"
+                 Foreground="#443020"
                  x:Name="btnTableNine"
                 Click="btnTableNine_Click"
                 />
@@ -148,6 +157,7 @@
                 Width="150"
                 Height="150"
                 Background="#F1D881"
+                 Foreground="#443020"
                  x:Name="btnTableTen"
                 Click="btnTableTen_Click"
                 />
@@ -159,6 +169,7 @@
                 Width="150"
                 Height="150"
                 Background="#F1D881"
+                 Foreground="#443020"
                  x:Name="btnTableEleven"
                 Click="btnTableEleven_Click"
                 />
@@ -170,6 +181,7 @@
                 Width="150"
                 Height="150"
                 Background="#F1D881"
+                 Foreground="#443020"
                  x:Name="btnTableTwelf"
                 Click="btnTableTwelf_Click"
                 />

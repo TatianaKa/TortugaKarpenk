@@ -22,13 +22,13 @@ namespace TortugasKarpenko
                 ClassHelper.AppData.context.Order.Add(order);
                 ClassHelper.AppData.context.SaveChanges();
                 orderId = order.Id;
+                Pages.OrderPage.orderDish.Order = order;
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
                 throw;
             }
-           
         }
         public MainWindow()
         {

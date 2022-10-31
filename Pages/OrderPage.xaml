@@ -15,7 +15,7 @@
                   Grid.Row="1" 
                   Background="#D5921A"
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-              SelectionChanged="LvOrder_SelectionChanged"
+              SelectionChanged="LvOrder_SelectionChanged" d:ItemsSource="{d:SampleData ItemCount=5}"
                 >
 
             <ListView.ItemsPanel>
@@ -25,7 +25,7 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Height="50" Width="785"  Background="#D5921A" >
+                    <!--<Grid Height="50" Width="785"  Background="#D5921A" >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1.5*"/>
                             <ColumnDefinition Width="0.5*"/>
@@ -100,24 +100,101 @@
                    VerticalAlignment="Center"/>
                         </WrapPanel>
 
+                    </Grid>-->
+                    <Grid Height="60" Width="785"  Background="#D5921A" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Dish.Title}" 
+                                   TextWrapping="Wrap"
+                                   
+                       FontFamily="Garamond" 
+                       FontSize="30"
+                         Margin="10 0 0 0"
+                         Foreground="Black"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Center"/>
+                        <WrapPanel    Grid.Column="1">
+                            <TextBlock Text="{Binding Dish.Weight}" 
+                       FontFamily="Garamond" 
+                       FontSize="30"
+                       Foreground="Black"
+                       Margin="10 10 0 0"/>
+                            <TextBlock Text="гр." 
+                       FontFamily="Garamond" 
+                       FontSize="30"
+                   Margin="10 10 0 0"
+                   Grid.Column="1"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"/>
+                        </WrapPanel>
+
+                        <WrapPanel Grid.Column="2">
+                            <TextBlock Text="-"
+                       Margin="10 10 0 10"
+                       x:Name="txbMinus"
+                       MouseDown="txbMinus_MouseDown"
+                        FontFamily="Garamond" 
+                                       
+                        Foreground="Black"
+                       FontSize="30"/>
+                            <TextBlock Text="{Binding Path=Qty}" 
+                   Grid.Column="2"
+                       FontFamily="Garamond" 
+                   Foreground="Black"
+                       FontSize="30"
+                   Margin="5 10 0 0"
+                   VerticalAlignment="Center"/>
+                            <TextBlock Text="+"
+                       Margin="10 10 5 0"
+                                       x:Name="txbPlus"
+                                       MouseDown="txbPlus_MouseDown"
+                                       VerticalAlignment="Center"
+                        FontFamily="Garamond" 
+                        Foreground="Black"
+                       FontSize="30"/>
+                            <TextBlock Text="{Binding Cost}" 
+                   Grid.Column="2"
+                                       
+                   Foreground="Black"
+                       FontFamily="Garamond" 
+                       FontSize="30"
+                   Margin="10 10 0 0"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"/>
+                            <TextBlock Text="X" 
+                                       x:Name="txbDelete"
+                                       MouseDown="txbDelete_MouseDown"
+                   Grid.Column="2"
+                   Foreground="Black"
+                       FontFamily="Garamond" 
+                       FontSize="30"
+                   Margin="10 10 0 0"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"/>
+                        </WrapPanel>
+
                     </Grid>
-                   
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <TextBlock Text="Итого:"
+        <WrapPanel Width="400"
+                   Height="50"
+                   Orientation="Horizontal"
+                   Margin="0 570 0 0">
+            <TextBlock Text="Итого:"
                        FontFamily="Garamond" 
                    FontSize="36" 
-                   VerticalAlignment="Bottom"
-                   HorizontalAlignment="Center"
-                   Margin="0 0 70 110"/> 
-        <TextBlock 
+                       Margin="50 5 0 0"/>
+            <TextBlock 
                        FontFamily="Garamond" 
                    FontSize="36"                  
                    x:Name="txbFinishCost"
-                   VerticalAlignment="Bottom"
-                   HorizontalAlignment="Center"
-                   Margin="80 0 0 110"/>
+                Margin="10 0 0 0"/>
+        </WrapPanel>
+     
         <TextBlock Text="Заказ" 
                    FontFamily="Garamond" 
                    FontSize="36" 

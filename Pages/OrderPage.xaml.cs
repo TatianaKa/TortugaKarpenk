@@ -10,32 +10,19 @@ namespace TortugasKarpenko.Pages
     public partial class OrderPage : Page
     {
         public static EF.OrderDish orderDish = new EF.OrderDish();
-        bool pay = false;
+        public static EF.Order order = new EF.Order();
+        public static bool pay = false;
         int qty;
-        decimal cost, finishCost;
-        List<EF.OrderDish> list = new List<EF.OrderDish>();
-        private void CountFinishCost()
-        {
-            list = ClassHelper.AppData.context.OrderDish.ToList();
-            for (int i = 1; i < list.Count; i++)
-            {
-                if (MainWindow.orderId == i)
-                {
-                    finishCost += cost;
-                }
-            }
-            MessageBox.Show(finishCost.ToString());
-        }
+        decimal cost;
+        public static decimal finishCost;
+        public static List<EF.Dish> dishes = new List<EF.Dish>();
+
         public OrderPage()
         {
             InitializeComponent();
             Filter();
-        }
-        public OrderPage(EF.OrderDish OrderDish)
-        {
-            InitializeComponent();
-            pay = true;
-            Filter();
+            txbFinishCost.Text = finishCost.ToString();
+            
         }
 
         private void btnPay_Click(object sender, RoutedEventArgs e)
@@ -47,6 +34,8 @@ namespace TortugasKarpenko.Pages
             }
             else
             {
+                order.FinishCost = finishCost;
+                ClassHelper.AppData.context.SaveChanges();
                 PayWindow pay = new PayWindow();
                 pay.ShowDialog();
             }
@@ -65,19 +54,24 @@ namespace TortugasKarpenko.Pages
                 var mes = MessageBox.Show("Вы уверены?", "Вопрос", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (mes == MessageBoxResult.Yes)
                 {
+                    finishCost -= (decimal)orderDish.Cost;
+                    txbFinishCost.Text = finishCost.ToString();
                     ClassHelper.AppData.context.OrderDish.Remove(orderDish);
                     ClassHelper.AppData.context.SaveChanges();
                     MessageBox.Show("Удалено");
+
                 }
             }
         }
+
         public void Filter()
         {
             LvOrder.ItemsSource = ClassHelper.AppData.context.OrderDish.Where(i => i.OrderId == MainWindow.orderId).ToList();
+            //LvOrder.ItemsSource = ProductWindow.dishesList;
         }
+
         private void LvOrder_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
             var orderdish = LvOrder.SelectedItem as EF.OrderDish;
             orderDish = orderdish;
             if (orderdish != null)
@@ -85,7 +79,6 @@ namespace TortugasKarpenko.Pages
                 qty = orderdish.Qty;
                 cost = ClassHelper.AppData.context.Dish.Where(i => i.Id == orderDish.DishId).First().Cost;
             }
-
             Filter();
 
         }
@@ -102,6 +95,7 @@ namespace TortugasKarpenko.Pages
                 orderDish.Qty = qty;
                 orderDish.Cost = cost * qty;
                 ClassHelper.AppData.context.SaveChanges();
+                txbFinishCost.Text = finishCost.ToString();
             }
             else
             {
@@ -109,6 +103,8 @@ namespace TortugasKarpenko.Pages
                 orderDish.Qty = qty;
                 orderDish.Cost = cost * qty;
                 ClassHelper.AppData.context.SaveChanges();
+                finishCost -= cost;
+                txbFinishCost.Text = finishCost.ToString();
             }
             Filter();
         }
@@ -119,7 +115,8 @@ namespace TortugasKarpenko.Pages
             orderDish.Qty = qty;
             orderDish.Cost = cost * qty;
             ClassHelper.AppData.context.SaveChanges();
-            CountFinishCost();
+            finishCost += cost;
+            txbFinishCost.Text = finishCost.ToString();
             Filter();
         }
 

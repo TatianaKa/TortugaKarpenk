@@ -65,20 +65,21 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ClassHelper\AppData.cs" />
+    <Compile Include="ClassHelper\Busket.cs" />
     <Compile Include="EF\Book.cs">
-      <DependentUpon>ModelHome.tt</DependentUpon>
+      <DependentUpon>Model401.tt</DependentUpon>
     </Compile>
     <Compile Include="EF\Category.cs">
-      <DependentUpon>ModelHome.tt</DependentUpon>
+      <DependentUpon>Model401.tt</DependentUpon>
     </Compile>
     <Compile Include="EF\Dish.cs">
-      <DependentUpon>ModelHome.tt</DependentUpon>
+      <DependentUpon>Model401.tt</DependentUpon>
     </Compile>
     <Compile Include="EF\Employee.cs">
-      <DependentUpon>ModelHome.tt</DependentUpon>
+      <DependentUpon>Model401.tt</DependentUpon>
     </Compile>
     <Compile Include="EF\Ingridient.cs">
-      <DependentUpon>ModelHome.tt</DependentUpon>
+      <DependentUpon>Model401.tt</DependentUpon>
     </Compile>
     <Compile Include="EF\Model401.Context.cs">
       <AutoGen>True</AutoGen>
@@ -111,19 +112,19 @@
       <DependentUpon>ModelHome.edmx</DependentUpon>
     </Compile>
     <Compile Include="EF\Order.cs">
-      <DependentUpon>ModelHome.tt</DependentUpon>
+      <DependentUpon>Model401.tt</DependentUpon>
     </Compile>
     <Compile Include="EF\OrderDish.cs">
-      <DependentUpon>ModelHome.tt</DependentUpon>
+      <DependentUpon>Model401.tt</DependentUpon>
     </Compile>
     <Compile Include="EF\Role.cs">
-      <DependentUpon>ModelHome.tt</DependentUpon>
+      <DependentUpon>Model401.tt</DependentUpon>
     </Compile>
     <Compile Include="EF\sysdiagrams.cs">
-      <DependentUpon>ModelHome.tt</DependentUpon>
+      <DependentUpon>Model401.tt</DependentUpon>
     </Compile>
     <Compile Include="EF\Table.cs">
-      <DependentUpon>ModelHome.tt</DependentUpon>
+      <DependentUpon>Model401.tt</DependentUpon>
     </Compile>
     <Compile Include="Pages\OrderPage.xaml.cs">
       <DependentUpon>OrderPage.xaml</DependentUpon>
@@ -191,6 +192,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="EF\ModelHome.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelHome.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EntityDeploy Include="EF\Model401.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model401.Designer.cs</LastGenOutput>
@@ -198,10 +203,6 @@
     <None Include="EF\Model401.edmx.diagram">
       <DependentUpon>Model401.edmx</DependentUpon>
     </None>
-    <EntityDeploy Include="EF\ModelHome.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelHome.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="EF\ModelHome.edmx.diagram">
       <DependentUpon>ModelHome.edmx</DependentUpon>
     </None>

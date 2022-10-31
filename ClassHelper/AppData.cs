@@ -8,7 +8,7 @@ namespace TortugasKarpenko.ClassHelper
 {
     public class AppData
     {
-       // public static EF.Entities401 context = new EF.Entities401();
+        //public static EF.Entities401 context = new EF.Entities401();
         public static EF.EntitiesHome context = new EF.EntitiesHome();
     }
 }

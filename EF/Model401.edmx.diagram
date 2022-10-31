@@ -4,26 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f3c698c8d09a4027b82954a6379a367d" Name="Diagram1">
-        <EntityTypeShape EntityType="TortugasKarpenkoModel.Book" Width="1.5" PointX="3" PointY="1.125" />
-        <EntityTypeShape EntityType="TortugasKarpenkoModel.Category" Width="1.5" PointX="0.75" PointY="10.625" />
-        <EntityTypeShape EntityType="TortugasKarpenkoModel.Dish" Width="1.5" PointX="3" PointY="10" />
-        <EntityTypeShape EntityType="TortugasKarpenkoModel.Employee" Width="1.5" PointX="3" PointY="6.625" />
-        <EntityTypeShape EntityType="TortugasKarpenkoModel.Ingridient" Width="1.5" PointX="5.25" PointY="10.625" />
-        <EntityTypeShape EntityType="TortugasKarpenkoModel.Order" Width="1.5" PointX="3" PointY="3.75" />
-        <EntityTypeShape EntityType="TortugasKarpenkoModel.Role" Width="1.5" PointX="0.75" PointY="7.125" />
-        <EntityTypeShape EntityType="TortugasKarpenkoModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" />
-        <EntityTypeShape EntityType="TortugasKarpenkoModel.Table" Width="1.5" PointX="0.75" PointY="2.625" />
-        <AssociationConnector Association="TortugasKarpenkoModel.FK_Booking_Table" />
-        <AssociationConnector Association="TortugasKarpenkoModel.FK_Dish_Category" />
-        <AssociationConnector Association="TortugasKarpenkoModel.FK_Employee_Role" />
-        <AssociationConnector Association="TortugasKarpenkoModel.FK_Order_Table" />
-        <AssociationConnector Association="TortugasKarpenkoModel.IngridientDish" />
-        <EntityTypeShape EntityType="TortugasKarpenkoModel.OrderDish" Width="1.5" PointX="5.25" PointY="7" />
-        <AssociationConnector Association="TortugasKarpenkoModel.FK_OrderDish_Dish" />
-        <AssociationConnector Association="TortugasKarpenkoModel.FK_OrderDish_Employee" />
-        <AssociationConnector Association="TortugasKarpenkoModel.FK_OrderDish_Order" />
-        </Diagram>
+      <Diagram DiagramId="6a043dd9992c43269a30b93ab6f934d3" Name="Diagram1">
+        <EntityTypeShape EntityType="TortugasKarpenkoModel.Book" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortugasKarpenkoModel.Category" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortugasKarpenkoModel.Dish" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortugasKarpenkoModel.Employee" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortugasKarpenkoModel.Ingridient" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortugasKarpenkoModel.Order" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortugasKarpenkoModel.OrderDish" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortugasKarpenkoModel.Role" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortugasKarpenkoModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortugasKarpenkoModel.Table" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <AssociationConnector Association="TortugasKarpenkoModel.FK_Booking_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="TortugasKarpenkoModel.FK_Dish_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="TortugasKarpenkoModel.FK_OrderDish_Dish" ManuallyRouted="false" />
+        <AssociationConnector Association="TortugasKarpenkoModel.FK_Employee_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="TortugasKarpenkoModel.FK_OrderDish_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="TortugasKarpenkoModel.FK_Order_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="TortugasKarpenkoModel.FK_OrderDish_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="TortugasKarpenkoModel.IngridientDish" ManuallyRouted="false" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
